@@ -1,0 +1,24 @@
+{
+  "name": "ultra-nft",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx gulp dev",
+    "build": "npx gulp build",
+    "clean": "npx gulp clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^7.0.0",
+    "dotenv": "^16.0.3",
+    "gulp": "^4.0.2",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.56.1"
+  }
+}

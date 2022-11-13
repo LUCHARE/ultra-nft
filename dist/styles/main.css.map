@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA","file":"main.css","sourcesContent":["*, *::before, *::after {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}\r\n\r\nhtml, body {\r\n\r\n}\r\n\r\n.wrapper {\r\n\r\n}\r\n\r\n.content {\r\n\r\n}\r\n\r\n.container {\r\n    \r\n}"]}
