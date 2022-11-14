@@ -1,21 +1,6 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import 'imports/generic.scss';
 
-html, body {
-
-}
-
-.wrapper {
-
-}
-
-.content {
-
-}
-
-.container {
-    
-}
+@import 'imports/components.scss';
+@import 'imports/header.scss';
+@import 'imports/footer.scss';
+@import 'imports/home.scss';

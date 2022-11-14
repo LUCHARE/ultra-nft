@@ -1,0 +1,42 @@
+.header {
+    &__inner {
+        display: grid;
+        align-items: center;
+        grid-template-areas: 'logo search-form spacing navbar connect-wallet';
+        grid-template-columns: auto auto 1fr auto auto;
+        padding: 26px 0
+    }
+
+    &__logo {
+        grid-area: logo;
+    }
+
+    &__search-form {
+        grid-area: search-form;
+    }
+
+    &__nav {
+        grid-area: navbar;
+        margin-right: 32px;
+    }
+
+    &__connect-wallet-link {
+        grid-area: connect-wallet
+    }
+
+    &__nav-list {
+        display: flex;
+    }
+
+    &__nav-list-item:not(:last-child) {
+        margin-right: 32px
+    }
+
+    &__nav-link {
+        @include Urbanist(16px, 700, #fff);
+    }
+
+    &__logo {
+        margin-right: 40px
+    }
+} 

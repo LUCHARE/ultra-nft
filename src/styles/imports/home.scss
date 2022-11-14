@@ -1,0 +1,112 @@
+.hero {
+    margin-bottom: 160px;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__main {
+        display: grid;
+        grid-template-areas: 'heading heading'
+                             '  text   text  '
+                             'button1 button2';
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+        max-width: 470px;
+    }
+
+    &__heading {
+        grid-area: heading;
+
+        margin-bottom: 40px;
+
+        @include Urbanist(48px, 700, #fff);
+    }
+
+    &__text {
+        grid-area: text;
+        
+        margin-bottom: 40px;
+
+        @include Urbanist(20px, 400, #fff)
+    }
+
+    &__explore-link {
+        grid-area: button1;
+
+        margin-right: 16px;
+    }
+
+    &__create-link {
+        grid-area: button2;
+    }
+
+    &__illustration-img {
+        width: 100%;
+    }
+}
+
+.how-it-works {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading {
+        margin-bottom: 64px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__card-icon {
+        margin-bottom: 24px;
+        padding: 20px;
+        border-radius: 50%;
+    }
+
+    &__card-icon-img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain
+    }
+
+    &__card-icon_aurora {
+        background: linear-gradient(207.67deg, #23D3A4 3.43%, #5B49CF 104.7%);
+    }
+
+    &__card-icon_mallows {
+        background: linear-gradient(63.88deg, #739EEC 29.38%, #FF8C9F 86.63%);
+    }
+
+    &__card-icon_sunset {
+        background: linear-gradient(66.27deg, #FE6F2D -10.45%, #FDCE38 76.78%);
+    }
+
+    &__card-icon_ocean {
+        background: linear-gradient(133.48deg, #2EA3F2 -3.48%, #A651FB 130.9%);
+    }
+
+    &__card-heading {
+        @include Urbanist(24px, 700, #fff);
+        
+        margin-bottom: 8px;
+    }
+
+    &__card-text {
+        @include Urbanist(16px, 400, #fff);
+
+        text-align: center;
+    }
+}

@@ -1,0 +1,106 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    &__img {
+        width: 47px;
+        margin-right: 20px
+    }
+
+    &__text {
+        @include Urbanist(32px, 700, #fff)
+    }
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.button_size_l {
+    padding: 25px 55px;
+    border-radius: 16px;
+    
+    .button__left-icon {
+        margin-right: 8px;
+    }
+    
+    .button__text {
+        @include Urbanist(20px, 700, #fff)
+    }
+}
+
+.button_size_m {
+    padding: 18px 25px;
+    border-radius: 12px;
+
+    .button__left-icon {
+        margin-right: 6px;
+    }
+
+    .button__text {
+        @include Urbanist(16px, 700, #fff)
+    }
+}
+
+.button_style_rays {
+    background: linear-gradient(207.67deg, #FDAE8F 3.43%, #FD1C68 104.7%);
+}
+
+.button_style_beams {
+    border: 1px solid #FFFFFF;
+}
+
+.button_style_material {
+    background: #3C485D;
+}
+
+.search-form {
+    position: relative;
+
+    &__input { 
+        display: block;
+        max-width: 300px;
+        padding: 12px 12px 12px 44px;
+
+        background: #3C485D;
+        border-radius: 8px;
+
+        color: #8393AF
+    }
+
+    &__submit {
+        position: absolute;
+        
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+
+        background: url(./../images/icons/magnifying-glass.svg) center/cover no-repeat;
+    }
+}
+
+.rays-grad-text {
+    background: linear-gradient(207.67deg, #FDAE8F 3.43%, #FD1C68 104.7%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.heading {
+    font-family: Urbanist, sans-serif;
+    color: #fff;
+}
+
+.heading_size_l {
+    font-weight: 700;
+    font-size: 64px;
+}

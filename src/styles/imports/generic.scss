@@ -1,0 +1,51 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #030812;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+input, button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.container {
+    display: block;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@mixin Urbanist($size: 15px, $weight: 400, $color: #fff) {
+    font-family: Urbanist, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
