@@ -15,7 +15,15 @@
 .button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 
+    &__left-icon {
+        width: 24px;
+        height: 24px;
+
+        object-fit: contain;
+        object-position: center;
+    }
 }
 
 .button_size_l {
@@ -103,4 +111,88 @@
 .heading_size_l {
     font-weight: 700;
     font-size: 64px;
+}
+
+.price-button {
+    display: grid;
+    justify-items: center;
+
+    &__icon {
+        margin-bottom: 4px;
+    }
+    &__count {
+        @include Urbanist(16px, 400, #fff)
+    }
+    &__currency {
+        @include Urbanist(14px, 400, #8393AF)
+    }
+}
+
+.bid-button {
+    display: grid;
+    justify-items: center;
+
+    &__icon {
+        margin-bottom: 4px
+    }
+
+    &__count {
+        @include Urbanist(16px, 400, #fff)
+    }
+    &__max-count {
+        @include Urbanist(14px, 400, #8393AF)
+    }
+}
+
+.like-button {
+    display: grid;
+    justify-items: center;
+
+    &__icon {
+        margin-bottom: 4px;
+    }
+
+    &__count {
+        @include Urbanist(16px, 400, #fff)
+    }
+}
+
+.collection-info {
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    grid-template-areas: 'avatar name'
+                         'avatar author';
+    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto;
+
+    &__avatar {
+        grid-area: avatar;
+
+        align-self: center;
+
+        margin-right: 12px;
+
+        width: 64px;
+        border-radius: 50%;
+    }
+    &__name {
+        @include Urbanist(24px, 700, #fff);
+    }
+    &__author-name {
+        grid-area: name;
+
+        @include Urbanist(16px, 400, #fff)
+    }
+    &__author {
+        grid-area: author;
+
+        @include Urbanist(16px, 400, #8393AF)
+    }
+}
+
+.collection-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
 }

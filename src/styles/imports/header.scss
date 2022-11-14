@@ -3,7 +3,7 @@
         display: grid;
         align-items: center;
         grid-template-areas: 'logo search-form spacing navbar connect-wallet';
-        grid-template-columns: auto auto 1fr auto auto;
+        grid-template-columns: repeat(2, auto) 1fr repeat(2, auto);
         padding: 26px 0
     }
 

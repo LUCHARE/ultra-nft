@@ -13,7 +13,7 @@
                              '  text   text  '
                              'button1 button2';
         grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: repeat(3, auto);
         max-width: 470px;
     }
 
@@ -49,6 +49,8 @@
 }
 
 .how-it-works {
+    margin-bottom: 160px;
+
     &__inner {
         display: flex;
         flex-direction: column;
@@ -108,5 +110,248 @@
         @include Urbanist(16px, 400, #fff);
 
         text-align: center;
+        max-width: 270px;
+        line-height: 150%;
+    }
+}
+
+.live-auctions {
+    margin-bottom: 160px;
+
+    &__inner {
+        
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 64px;
+    }
+
+    &__card {
+        display: grid;
+        grid-template-areas: 'preview preview preview'
+                             'info info info'
+                             'stats stats stats'
+                             'button1 button2 button2'
+                             ;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        padding: 24px;
+        max-width: 470px;
+        
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+    }
+
+    &__card-preview {
+        grid-area: preview;
+
+        margin-bottom: 24px;
+
+        max-width: 422px;
+        width: 100%;
+        border-radius: 24px;
+    }
+
+
+    &__card-info {
+        grid-area: info;
+        align-self: center;
+        
+        margin-bottom:24px;
+    }
+
+    &__card-stats {
+        grid-area: stats;
+
+        margin-bottom: 24px;
+    }
+
+    &__card-timer-link {
+        grid-area: button1;
+
+        margin-right: 16px;
+    }
+
+    &__card-place-bid-link {
+        grid-area: button2;
+    }
+
+    &__card-place-bid-button {
+        width: 100%;
+    }
+}
+
+.popular-collections {
+    margin-bottom: 160px;
+
+    &__inner {
+        
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 64px;
+    }
+
+    &__card {
+        display: inline-grid;
+        grid-template-areas: 'previews previews'
+                             'info like';
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        // max-width: 370px;
+        padding: 24px;
+
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+    }
+
+    &__card-previews {
+        grid-area: previews;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 24px;        
+    }
+
+    &__card-like-button {
+        grid-area: like;
+        align-self: center;
+    }
+
+    
+    &__card-preview {
+        max-width: 155px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__card-preview:nth-child(1) {
+        border-radius: 24px 24px 4px 24px;
+        margin-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    &__card-preview:nth-child(2) {
+        border-radius: 24px 24px 24px 4px;
+    }
+
+    &__card-preview:nth-child(3) {
+        border-radius: 24px 4px 24px 24px;
+    }
+
+    &__card-preview:nth-child(4) {
+        border-radius: 4px 24px 24px 24px;
+        // margin-top: 12px;
+        // margin-left: 12px;
+    }
+}
+
+.top-sellers {
+    margin-bottom: 160px;
+
+    &__inner {
+        
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__card {
+        display: inline-grid;
+        grid-template-areas: 'avatar name'
+                             'avatar spent';
+        grid-template-columns: auto 1fr;
+
+        padding: 16px;
+        max-width: 270px;
+        width: 100%;
+
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+
+        border-radius: 24px;
+    }
+
+    &__card-avatar {
+        grid-area: avatar;
+        
+        margin-right: 16px;
+        width: 64px;
+        border-radius: 50%;
+    }
+
+    &__card-name {
+        grid-area: name;
+        align-self: end;
+
+        margin-bottom: 6px;
+
+        @include Urbanist(20px, 700, #fff)
+    }
+
+    &__card-spent {
+        grid-area: spent;
+        align-self: start;
+
+        @include Urbanist(16px, 400, #8393AF)
+    }
+}
+
+.todays-picks {
+    margin-bottom: 160px;
+    
+    &__inner {
+        // display: grid;
+        // justify-content: center;
+    }
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    &__list {
+        margin-bottom: 64px;
+    }
+
+    &__card {
+        display: inline-grid;
+        grid-template-areas: 'preview preview'
+                             'info info'
+                             'stats stats'
+                             'button1 button2';
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        padding: 24px;
+
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+    }
+
+    &__card-preview {
+        grid-area: preview;
+    }
+
+    &__card-info {
+        grid-area: info;
+    }
+
+    &__card-stats {
+        grid-area: stats;
+    }
+
+    &__card-history-link {
+        grid-area: button1;
+    }
+
+    &__card-place-bid-link {
+        grid-area: button2;
     }
 }
