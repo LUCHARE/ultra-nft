@@ -113,16 +113,25 @@
     font-size: 64px;
 }
 
+.heading_size_m {
+    font-weight: 700;
+    font-size: 48px;
+}
+
 .price-button {
     display: grid;
     justify-items: center;
 
+    cursor: pointer;
+
     &__icon {
         margin-bottom: 4px;
     }
+    
     &__count {
         @include Urbanist(16px, 400, #fff)
     }
+
     &__currency {
         @include Urbanist(14px, 400, #8393AF)
     }
@@ -132,6 +141,8 @@
     display: grid;
     justify-items: center;
 
+    cursor: pointer;
+
     &__icon {
         margin-bottom: 4px
     }
@@ -139,6 +150,7 @@
     &__count {
         @include Urbanist(16px, 400, #fff)
     }
+
     &__max-count {
         @include Urbanist(14px, 400, #8393AF)
     }
@@ -147,6 +159,8 @@
 .like-button {
     display: grid;
     justify-items: center;
+
+    cursor: pointer;
 
     &__icon {
         margin-bottom: 4px;
@@ -175,15 +189,23 @@
 
         width: 64px;
         border-radius: 50%;
+
+        cursor: pointer;
     }
+
     &__name {
         @include Urbanist(24px, 700, #fff);
+        cursor: pointer;
     }
+    
     &__author-name {
         grid-area: name;
 
-        @include Urbanist(16px, 400, #fff)
+        @include Urbanist(16px, 400, #fff);
+    
+        cursor: pointer;
     }
+    
     &__author {
         grid-area: author;
 

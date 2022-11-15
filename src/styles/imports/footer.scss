@@ -28,19 +28,17 @@
     }
     &__sitemap-cat-list {
         display: grid;
+
     }
     &__sitemap-cat-list-item:not(:last-child) {
         display: inline-block;
         margin-bottom: 20px;
     }
 
-    &__sitemap-cat:not(:last-child) {
-        margin-right: 120px;
-    }
-
     &__sitemap {
         grid-area: sitemap;
         display: flex;
+        justify-content: space-between;
         margin-bottom: 70px;
     }
 
@@ -90,6 +88,7 @@
 
     &__copyright {
         grid-area: copyright;
+        justify-self: end;
         align-self: center;
 
         @include Urbanist(14px, 700, #8393AF)
