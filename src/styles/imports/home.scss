@@ -308,8 +308,9 @@
     margin-bottom: 160px;
     
     &__inner {
-        // display: grid;
-        // justify-content: center;
+        display: grid;
+        justify-items: center;
+        justify-content: center;
     }
 
     &__heading {
@@ -337,21 +338,37 @@
 
     &__card-preview {
         grid-area: preview;
+
+        margin-bottom: 24px;
+
+        border-radius: 24px;
+        width: 100%;
+        max-width: 370px;
     }
 
     &__card-info {
         grid-area: info;
+
+        margin-bottom: 24px;
     }
 
     &__card-stats {
         grid-area: stats;
+
+        margin-bottom: 24px;
     }
 
     &__card-history-link {
         grid-area: button1;
+
+        margin-right: 16px;
     }
 
     &__card-place-bid-link {
-        grid-area: button2;
+        grid-area: button2;        
+    }
+
+    &__card-place-bid-button {
+        width: 100%;
     }
 }

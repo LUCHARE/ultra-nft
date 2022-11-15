@@ -1,0 +1,97 @@
+.footer {
+    &__inner {
+        display: grid;
+        grid-template-areas: 'about sitemap sitemap'
+                             'contacts sitemap sitemap'
+                             'contacts socials copyright';
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        padding: 0 0 64px 0; 
+    }
+
+    &__about-us-text {
+        @include Urbanist(16px, 700, #8393AF);
+
+        margin-bottom: 36px;
+        max-width: 470px;
+    }
+
+    &__sitemap-cat-name {
+        display: inline-block;
+        margin-bottom: 24px;
+
+        @include Urbanist(20px, 400, #fff)
+    }
+
+    &__sitemap-link {
+        @include Urbanist(14px, 700, #8393AF)
+    }
+    &__sitemap-cat-list {
+        display: grid;
+    }
+    &__sitemap-cat-list-item:not(:last-child) {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    &__sitemap-cat:not(:last-child) {
+        margin-right: 120px;
+    }
+
+    &__sitemap {
+        grid-area: sitemap;
+        display: flex;
+        margin-bottom: 70px;
+    }
+
+    &__socials {
+        grid-area: socials;
+        align-self: center;
+
+        display: flex;
+    }
+
+    &__socials-item:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    &__contacts {
+        grid-area: contacts;
+    }
+    &__contacts-item:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    &__contact {
+        display: inline-grid;
+        grid-template-areas: 'icon type'
+                             'icon contents';
+    }
+
+    &__contact-icon {
+        grid-area: icon;
+
+        margin-right: 12px;
+    }
+
+    &__contact-type {
+        grid-area: type;
+        align-self: end;
+
+        margin-bottom: 6px;
+
+        @include Urbanist(12px, 400, #8393AF)
+    }
+    &__contact-contents {
+        grid-area: contents;
+        align-self: start;
+
+        @include Urbanist(20px, 400, #fff)
+    }
+
+    &__copyright {
+        grid-area: copyright;
+        align-self: center;
+
+        @include Urbanist(14px, 700, #8393AF)
+    }
+}

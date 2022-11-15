@@ -282,6 +282,98 @@ input, button {
   margin-right: 40px;
 }
 
+.footer__inner {
+  display: grid;
+  grid-template-areas: "about sitemap sitemap" "contacts sitemap sitemap" "contacts socials copyright";
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  padding: 0 0 64px 0;
+}
+.footer__about-us-text {
+  font-family: Urbanist, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #8393AF;
+  margin-bottom: 36px;
+  max-width: 470px;
+}
+.footer__sitemap-cat-name {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-family: Urbanist, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+.footer__sitemap-link {
+  font-family: Urbanist, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #8393AF;
+}
+.footer__sitemap-cat-list {
+  display: grid;
+}
+.footer__sitemap-cat-list-item:not(:last-child) {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.footer__sitemap-cat:not(:last-child) {
+  margin-right: 120px;
+}
+.footer__sitemap {
+  grid-area: sitemap;
+  display: flex;
+  margin-bottom: 70px;
+}
+.footer__socials {
+  grid-area: socials;
+  align-self: center;
+  display: flex;
+}
+.footer__socials-item:not(:last-child) {
+  margin-right: 8px;
+}
+.footer__contacts {
+  grid-area: contacts;
+}
+.footer__contacts-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.footer__contact {
+  display: inline-grid;
+  grid-template-areas: "icon type" "icon contents";
+}
+.footer__contact-icon {
+  grid-area: icon;
+  margin-right: 12px;
+}
+.footer__contact-type {
+  grid-area: type;
+  align-self: end;
+  margin-bottom: 6px;
+  font-family: Urbanist, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #8393AF;
+}
+.footer__contact-contents {
+  grid-area: contents;
+  align-self: start;
+  font-family: Urbanist, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+.footer__copyright {
+  grid-area: copyright;
+  align-self: center;
+  font-family: Urbanist, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #8393AF;
+}
+
 .hero {
   margin-bottom: 160px;
 }
@@ -521,6 +613,11 @@ input, button {
 .todays-picks {
   margin-bottom: 160px;
 }
+.todays-picks__inner {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
 .todays-picks__heading {
   text-align: center;
   margin-bottom: 64px;
@@ -539,17 +636,26 @@ input, button {
 }
 .todays-picks__card-preview {
   grid-area: preview;
+  margin-bottom: 24px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 370px;
 }
 .todays-picks__card-info {
   grid-area: info;
+  margin-bottom: 24px;
 }
 .todays-picks__card-stats {
   grid-area: stats;
+  margin-bottom: 24px;
 }
 .todays-picks__card-history-link {
   grid-area: button1;
+  margin-right: 16px;
 }
 .todays-picks__card-place-bid-link {
   grid-area: button2;
 }
-/*# sourceMappingURL=main.css.map */
+.todays-picks__card-place-bid-button {
+  width: 100%;
+}
