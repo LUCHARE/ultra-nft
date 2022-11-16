@@ -10,6 +10,17 @@
     &__text {
         @include Urbanist(32px, 700, #fff)
     }
+
+    @media (max-width: 767px) {
+        &__img {
+            width: 37px;
+            margin-right: 10px;
+        }
+
+        &__text {
+            @include Urbanist(26px, 700, #fff)
+        }
+    }
 }
 
 .button {
@@ -36,6 +47,10 @@
     
     .button__text {
         @include Urbanist(20px, 700, #fff)
+    }
+
+    @media (max-width: 1024px) {
+        padding: 25px 45px;
     }
 }
 
@@ -111,6 +126,10 @@
 .heading_size_l {
     font-weight: 700;
     font-size: 64px;
+
+    @media (max-width: 767px) {
+        font-size: 48px;
+    }
 }
 
 .heading_size_m {
@@ -210,6 +229,20 @@
         grid-area: author;
 
         @include Urbanist(16px, 400, #8393AF)
+    }
+
+    @media (max-width: 767px) {
+        &__avatar {
+            width: 48px
+        }
+
+        &__name {
+            font-size: 18px;
+        }
+
+        &__author, &__author-name {
+            font-size: 12px;
+        }
     }
 }
 

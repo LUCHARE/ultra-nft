@@ -136,6 +136,7 @@
 
     &__list {
         display: flex;
+        gap: 16px;
     }
 
     &__card {
@@ -150,9 +151,9 @@
         
         background: rgba(255, 255, 255, 0.2);
         border-radius: 24px;
-        margin: 16px;
         width: 27vw;
         max-width: 470px;
+        min-width: 370px;
     }
 
     &__card-preview {
@@ -203,12 +204,14 @@
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 64px;
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 16px;
     }
 
     // &__list-item {
@@ -223,7 +226,6 @@
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
         padding: 24px;
-        margin: 16px;
 
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(20px);
@@ -233,12 +235,14 @@
     &__card-previews {
         grid-area: previews;
         justify-self: center;
-
+        
         display: grid;
+        justify-items: center;
+        justify-content: center;
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
         padding-bottom: 24px;
         width: 100%;
-        aspect-ratio: 1;   
     }
 
     &__card-like-button {
@@ -247,9 +251,15 @@
     }
 
     
+    &__card-info {
+        grid-area: info;
+
+        margin-right: 12px;
+    }
+
     &__card-preview {
-        width: calc(100% - 12px);
-        object-fit: cover;
+        width: 100%;
+        // object-fit: cover;
         
         transition: transform .3s ease-in-out;
         
@@ -263,8 +273,6 @@
     &__card-preview:nth-child(1) {
         border-radius: 24px 24px 4px 24px;
         transform-origin: bottom right;
-        margin-bottom: 12px;
-        margin-right: 12px;
     }
 
     &__card-preview:nth-child(2) {
@@ -280,6 +288,33 @@
     &__card-preview:nth-child(4) {
         border-radius: 4px 24px 24px 24px;
         transform-origin: left top;
+    }
+
+    @media (max-width: 1024px) {
+        &__header {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__heading {
+            text-align: center;
+        }
+
+        &__explore-all-link {
+            margin-top: 32px;
+        }
+    }
+ 
+    @media (max-width: 767px) {
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+    }
+
+    @media (max-width: 425px) {
+        &__list {
+            grid-template-columns: 1fr;
+        }
     }
 }
 
@@ -297,7 +332,8 @@
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
     }
 
     &__card {
@@ -309,7 +345,6 @@
         grid-template-columns: auto 1fr;
 
         padding: 16px;
-        margin: 16px;
 
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(20px);
@@ -344,6 +379,12 @@
 
         @include Urbanist(16px, 400, #8393AF)
     }
+
+    @media (max-width: 425px) {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 
 .todays-picks {
@@ -361,6 +402,7 @@
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 16px;
         width: 100%;
         margin-bottom: 64px;
     }
@@ -372,9 +414,7 @@
                              'stats stats'
                              'button1 button2';
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, auto);
         padding: 24px;
-        margin: 16px;
 
         background: rgba(255, 255, 255, 0.2);
         border-radius: 24px;
@@ -413,5 +453,24 @@
 
     &__load-more-link {
         justify-self: center;
+    }
+
+    @media (max-width: 767px) {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__card {
+            grid-template-areas: 'preview preview'
+                                 'info info'
+                                 'stats stats'
+                                 'button1 button1'
+                                 'button2 button2';
+        }
+
+        &__card-history-link {
+            margin-right: 0px;
+            margin-bottom: 16px
+        }
     }
 }

@@ -39,4 +39,48 @@
     &__logo {
         margin-right: 40px
     }
+
+    &__search-button, &__burger-button {
+        display: none;
+    }
+    
+
+
+    @media (max-width: 1024px) {
+        &__search-form {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__nav, &__connect-wallet-link {
+            display: none;
+        }
+
+        &__search-button, &__burger-button {
+            display: block;
+        }
+
+        &__inner {
+            grid-template-areas: 'logo spacing search burger';
+            grid-template-columns: auto 1fr auto auto;
+        }
+
+        &__search-button {
+            grid-area: search;
+
+            margin-right: 16px;
+            height: 20px;
+        
+            cursor: pointer;
+        }
+        
+        &__burger-button {
+            grid-area: burger;
+            height: 20px;
+
+            cursor: pointer;
+        }
+    }
 } 
+

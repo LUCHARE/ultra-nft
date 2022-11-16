@@ -41,6 +41,11 @@ input, button {
   margin: 0 auto;
   padding: 0 20px;
 }
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+  }
+}
 
 .logo {
   display: inline-flex;
@@ -55,6 +60,18 @@ input, button {
   font-size: 32px;
   font-weight: 700;
   color: #fff;
+}
+@media (max-width: 767px) {
+  .logo__img {
+    width: 37px;
+    margin-right: 10px;
+  }
+  .logo__text {
+    font-family: Urbanist, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+  }
 }
 
 .button {
@@ -81,6 +98,11 @@ input, button {
   font-size: 20px;
   font-weight: 700;
   color: #fff;
+}
+@media (max-width: 1024px) {
+  .button_size_l {
+    padding: 25px 45px;
+  }
 }
 
 .button_size_m {
@@ -148,6 +170,11 @@ input, button {
 .heading_size_l {
   font-weight: 700;
   font-size: 64px;
+}
+@media (max-width: 767px) {
+  .heading_size_l {
+    font-size: 48px;
+  }
 }
 
 .heading_size_m {
@@ -250,6 +277,17 @@ input, button {
   font-weight: 400;
   color: #8393AF;
 }
+@media (max-width: 767px) {
+  .collection-info__avatar {
+    width: 48px;
+  }
+  .collection-info__name {
+    font-size: 18px;
+  }
+  .collection-info__author, .collection-info__author-name {
+    font-size: 12px;
+  }
+}
 
 .collection-stats {
   display: flex;
@@ -291,6 +329,37 @@ input, button {
 }
 .header__logo {
   margin-right: 40px;
+}
+.header__search-button, .header__burger-button {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .header__search-form {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .header__nav, .header__connect-wallet-link {
+    display: none;
+  }
+  .header__search-button, .header__burger-button {
+    display: block;
+  }
+  .header__inner {
+    grid-template-areas: "logo spacing search burger";
+    grid-template-columns: auto 1fr auto auto;
+  }
+  .header__search-button {
+    grid-area: search;
+    margin-right: 16px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .header__burger-button {
+    grid-area: burger;
+    height: 20px;
+    cursor: pointer;
+  }
 }
 
 .footer__inner {
@@ -503,6 +572,7 @@ input, button {
 }
 .live-auctions__list {
   display: flex;
+  gap: 16px;
 }
 .live-auctions__card {
   display: grid;
@@ -512,9 +582,9 @@ input, button {
   padding: 24px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 24px;
-  margin: 16px;
   width: 27vw;
   max-width: 470px;
+  min-width: 370px;
 }
 .live-auctions__card-preview {
   grid-area: preview;
@@ -548,11 +618,13 @@ input, button {
 .popular-collections__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 64px;
 }
 .popular-collections__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px;
 }
 .popular-collections__card {
   display: grid;
@@ -560,7 +632,6 @@ input, button {
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
   padding: 24px;
-  margin: 16px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 24px;
@@ -569,18 +640,23 @@ input, button {
   grid-area: previews;
   justify-self: center;
   display: grid;
+  justify-items: center;
+  justify-content: center;
   grid-template-columns: 1fr 1fr;
+  gap: 12px;
   padding-bottom: 24px;
   width: 100%;
-  aspect-ratio: 1;
 }
 .popular-collections__card-like-button {
   grid-area: like;
   align-self: center;
 }
+.popular-collections__card-info {
+  grid-area: info;
+  margin-right: 12px;
+}
 .popular-collections__card-preview {
-  width: calc(100% - 12px);
-  object-fit: cover;
+  width: 100%;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -590,8 +666,6 @@ input, button {
 .popular-collections__card-preview:nth-child(1) {
   border-radius: 24px 24px 4px 24px;
   transform-origin: bottom right;
-  margin-bottom: 12px;
-  margin-right: 12px;
 }
 .popular-collections__card-preview:nth-child(2) {
   border-radius: 24px 24px 24px 4px;
@@ -605,6 +679,28 @@ input, button {
   border-radius: 4px 24px 24px 24px;
   transform-origin: left top;
 }
+@media (max-width: 1024px) {
+  .popular-collections__header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .popular-collections__heading {
+    text-align: center;
+  }
+  .popular-collections__explore-all-link {
+    margin-top: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .popular-collections__list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+@media (max-width: 425px) {
+  .popular-collections__list {
+    grid-template-columns: 1fr;
+  }
+}
 
 .top-sellers {
   margin-bottom: 160px;
@@ -615,7 +711,8 @@ input, button {
 }
 .top-sellers__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
 }
 .top-sellers__card {
   display: grid;
@@ -624,7 +721,6 @@ input, button {
   grid-template-areas: "avatar name" "avatar spent";
   grid-template-columns: auto 1fr;
   padding: 16px;
-  margin: 16px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 24px;
@@ -655,6 +751,11 @@ input, button {
   font-weight: 400;
   color: #8393AF;
 }
+@media (max-width: 425px) {
+  .top-sellers__list {
+    grid-template-columns: 1fr;
+  }
+}
 
 .todays-picks {
   margin-bottom: 160px;
@@ -669,6 +770,7 @@ input, button {
 .todays-picks__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px;
   width: 100%;
   margin-bottom: 64px;
 }
@@ -676,9 +778,7 @@ input, button {
   display: grid;
   grid-template-areas: "preview preview" "info info" "stats stats" "button1 button2";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, auto);
   padding: 24px;
-  margin: 16px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 24px;
 }
@@ -706,4 +806,15 @@ input, button {
 .todays-picks__load-more-link {
   justify-self: center;
 }
-/*# sourceMappingURL=main.css.map */
+@media (max-width: 767px) {
+  .todays-picks__list {
+    grid-template-columns: 1fr;
+  }
+  .todays-picks__card {
+    grid-template-areas: "preview preview" "info info" "stats stats" "button1 button1" "button2 button2";
+  }
+  .todays-picks__card-history-link {
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
+}

@@ -41,6 +41,10 @@ input, button {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+
+    @media (max-width: 767px) {
+        padding: 0 10px;
+    }
 }
 
 @mixin Urbanist($size: 15px, $weight: 400, $color: #fff) {
