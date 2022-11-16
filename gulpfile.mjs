@@ -2,8 +2,10 @@
 import gulp from 'gulp'
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
+import gulpHb from 'gulp-hb'
 import sourcemaps from 'gulp-sourcemaps'
 import gulpif from 'gulp-if'
+import rename from 'gulp-rename'
 import browserSync from 'browser-sync'
 import { deleteAsync as del } from 'del'
 import dotenv from 'dotenv'
@@ -18,7 +20,8 @@ const reload = browserSync.reload
 const path = {
     src: {
         root: 'src/',
-        markup: 'src/*.html',
+        markup: ['src/*.html', 'src/*.hbs'],
+        partials: 'src/partials/**/*.hbs',
         styles: ['src/styles/*.css','src/styles/*.scss'],
         scripts: ['src/scripts/*.js', 'src/scripts/*.cjs', 'src/scripts/*.mjs'],
         images: 'src/images/**/*.*',
@@ -33,7 +36,7 @@ const path = {
         fonts: 'dist/fonts/'
     },
     watch: {
-        markup: 'src/**/*.html',
+        markup: ['src/*.html', 'src/*.hbs', 'src/partials/*.hbs'],
         styles: ['src/styles/**/*.css','src/styles/**/*.scss'],
         scripts: ['src/scripts/**/*.js', 'src/scripts/**/*.cjs', 'src/scripts/**/*.mjs'],
         images: 'src/images/**/*.*',
@@ -54,6 +57,8 @@ function buildStyles() {
 
 function buildMarkup() {
     return src(path.src.markup)
+        .pipe(gulpHb().partials(path.src.partials))
+        .pipe(rename(path => path.extname = '.html'))
         .pipe(dest(path.dist.markup))
         .pipe(reload({ stream: true }))
 }
