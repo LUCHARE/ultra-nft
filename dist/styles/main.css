@@ -104,6 +104,14 @@ input, button {
     padding: 25px 45px;
   }
 }
+@media (max-width: 425px) {
+  .button_size_l {
+    padding: 20px 30px;
+  }
+  .button_size_l .button__text {
+    font-size: 16px;
+  }
+}
 
 .button_size_m {
   padding: 18px 25px;
@@ -117,6 +125,12 @@ input, button {
   font-size: 16px;
   font-weight: 700;
   color: #fff;
+}
+@media (max-width: 425px) {
+  .button_size_m {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
 }
 
 .button_style_rays {
@@ -171,7 +185,7 @@ input, button {
   font-weight: 700;
   font-size: 64px;
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .heading_size_l {
     font-size: 48px;
   }
@@ -369,12 +383,14 @@ input, button {
   grid-template-rows: repeat(3, auto);
   padding: 0 0 64px 0;
 }
+.footer__about-us {
+  margin-bottom: 36px;
+}
 .footer__about-us-text {
   font-family: Urbanist, sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #8393AF;
-  margin-bottom: 36px;
   max-width: 470px;
 }
 .footer__sitemap-cat-name {
@@ -452,6 +468,46 @@ input, button {
   font-weight: 700;
   color: #8393AF;
 }
+@media (max-width: 1024px) {
+  .footer__inner {
+    grid-template-areas: "about sitemap" "contacts sitemap" "contacts socials" "copyright copyright";
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__about-us-text {
+    max-width: 320px;
+  }
+  .footer__socials {
+    place-self: center;
+  }
+  .footer__copyright {
+    justify-self: center;
+    margin-top: 32px;
+  }
+}
+@media (max-width: 640px) {
+  .footer__inner {
+    grid-template-areas: "about" "socials" "contacts" "sitemap" "copyright";
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 32px;
+  }
+  .footer__about-us {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 0;
+  }
+  .footer__about-us-logo {
+    margin-bottom: 32px;
+  }
+  .footer__about-us-text {
+    max-width: max-content;
+    text-align: center;
+  }
+  .footer__sitemap {
+    margin-bottom: 0;
+  }
+}
 
 .hero {
   margin-bottom: 160px;
@@ -465,12 +521,12 @@ input, button {
   display: grid;
   grid-template-areas: "heading heading" "  text   text  " "button1 button2";
   grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(3, auto);
+  row-gap: 40px;
+  column-gap: 16px;
   max-width: 470px;
 }
 .hero__heading {
   grid-area: heading;
-  margin-bottom: 40px;
   font-family: Urbanist, sans-serif;
   font-size: 48px;
   font-weight: 700;
@@ -478,7 +534,6 @@ input, button {
 }
 .hero__text {
   grid-area: text;
-  margin-bottom: 40px;
   font-family: Urbanist, sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -486,13 +541,61 @@ input, button {
 }
 .hero__explore-link {
   grid-area: button1;
-  margin-right: 16px;
 }
 .hero__create-link {
   grid-area: button2;
 }
 .hero__illustration-img {
   width: 100%;
+}
+@media (max-width: 1024px) {
+  .hero__inner {
+    flex-direction: column;
+  }
+  .hero__illustration {
+    order: 1;
+    margin-bottom: 48px;
+  }
+  .hero__main {
+    order: 2;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    max-width: max-content;
+  }
+  .hero__heading, .hero__text {
+    text-align: center;
+    max-width: 600px;
+  }
+  .hero__create-link {
+    justify-self: start;
+  }
+  .hero__explore-link {
+    justify-self: end;
+  }
+}
+@media (max-width: 767px) {
+  .hero__heading {
+    font-size: 42px;
+  }
+}
+@media (max-width: 375px) {
+  .hero__main {
+    grid-template-areas: "heading" "text" "button1" "button2";
+    grid-template-columns: 1fr;
+    gap: unset;
+  }
+  .hero__heading {
+    margin-bottom: 18px;
+  }
+  .hero__text {
+    margin-bottom: 48px;
+  }
+  .hero__explore-link {
+    margin-bottom: 12px;
+  }
+  .hero__create-link, .hero__explore-link {
+    width: 100%;
+  }
 }
 
 .how-it-works {
@@ -505,10 +608,14 @@ input, button {
 }
 .how-it-works__heading {
   margin-bottom: 64px;
+  text-align: center;
 }
 .how-it-works__list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 32px;
 }
 .how-it-works__card {
   display: flex;
@@ -611,6 +718,30 @@ input, button {
 .live-auctions__card-place-bid-button {
   width: 100%;
 }
+.live-auctions__footer {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .live-auctions__header {
+    justify-content: center;
+  }
+  .live-auctions__header-explore-link {
+    display: none;
+  }
+  .live-auctions__heading {
+    text-align: center;
+  }
+  .live-auctions__footer {
+    display: grid;
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+@media (max-width: 425px) {
+  .live-auctions__footer {
+    justify-content: stretch;
+  }
+}
 
 .popular-collections {
   margin-bottom: 160px;
@@ -679,15 +810,22 @@ input, button {
   border-radius: 4px 24px 24px 24px;
   transform-origin: left top;
 }
+.popular-collections__footer {
+  display: none;
+}
 @media (max-width: 1024px) {
   .popular-collections__header {
-    flex-direction: column;
     justify-content: center;
+  }
+  .popular-collections__header-explore-all-link {
+    display: none;
   }
   .popular-collections__heading {
     text-align: center;
   }
-  .popular-collections__explore-all-link {
+  .popular-collections__footer {
+    display: grid;
+    justify-content: center;
     margin-top: 32px;
   }
 }
@@ -700,8 +838,10 @@ input, button {
   .popular-collections__list {
     grid-template-columns: 1fr;
   }
+  .popular-collections__footer {
+    justify-content: stretch;
+  }
 }
-
 .top-sellers {
   margin-bottom: 160px;
 }
@@ -818,3 +958,4 @@ input, button {
     margin-bottom: 16px;
   }
 }
+/*# sourceMappingURL=main.css.map */

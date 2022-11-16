@@ -9,10 +9,14 @@
         padding: 0 0 64px 0; 
     }
 
+    &__about-us {
+        margin-bottom: 36px;
+    }
+
     &__about-us-text {
         @include Urbanist(16px, 700, #8393AF);
 
-        margin-bottom: 36px;
+        
         max-width: 470px;
     }
 
@@ -92,5 +96,63 @@
         align-self: center;
 
         @include Urbanist(14px, 700, #8393AF)
+    }
+
+    @media (max-width: 1024px) {
+        &__inner {
+            grid-template-areas: 'about sitemap'
+                                 'contacts sitemap'
+                                 'contacts socials'
+                                 'copyright copyright';
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__about-us-text {
+            max-width: 320px;
+        }
+
+        &__socials {
+            place-self: center;
+        }
+
+        &__copyright {
+            justify-self: center;
+            margin-top: 32px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        &__inner {
+            grid-template-areas: 'about'
+                                 'socials'
+                                 'contacts'
+                                 'sitemap'
+                                 'copyright';
+            grid-template-columns: 1fr;
+            justify-content: center;
+            
+            gap: 32px;
+        }
+
+        &__about-us {
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            margin-bottom: 0;
+        }
+
+        &__about-us-logo {
+            margin-bottom: 32px;
+        }
+
+        &__about-us-text {
+            max-width: max-content;
+            text-align: center;
+        }
+
+
+        &__sitemap {
+            margin-bottom: 0;
+        }
     }
 }

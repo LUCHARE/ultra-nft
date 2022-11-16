@@ -13,30 +13,23 @@
                              '  text   text  '
                              'button1 button2';
         grid-template-columns: auto 1fr;
-        grid-template-rows: repeat(3, auto);
+        row-gap: 40px;
+        column-gap: 16px;
         max-width: 470px;
     }
 
     &__heading {
         grid-area: heading;
-
-        margin-bottom: 40px;
-
         @include Urbanist(48px, 700, #fff);
     }
 
     &__text {
         grid-area: text;
-        
-        margin-bottom: 40px;
-
         @include Urbanist(20px, 400, #fff)
     }
 
     &__explore-link {
         grid-area: button1;
-
-        margin-right: 16px;
     }
 
     &__create-link {
@@ -45,6 +38,72 @@
 
     &__illustration-img {
         width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__illustration {
+            order: 1;
+            margin-bottom: 48px;
+        }
+
+        &__main {
+            order: 2;
+
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            max-width: max-content;
+
+        }
+
+        &__heading, &__text {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        &__create-link {
+            justify-self: start;
+        }
+
+        &__explore-link {
+            justify-self: end;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__heading {
+            font-size: 42px;
+        }
+    } 
+
+    @media (max-width: 375px) {
+        &__main {
+            grid-template-areas: 'heading'
+                                 'text'
+                                 'button1'
+                                 'button2';
+            grid-template-columns: 1fr;
+            gap: unset;
+        }
+
+        &__heading {
+            margin-bottom: 18px;
+        }
+
+        &__text {
+            margin-bottom: 48px;
+        }
+
+        &__explore-link {
+            margin-bottom: 12px;
+        }
+
+        &__create-link, &__explore-link {
+            width: 100%;
+        }
     }
 }
 
@@ -59,11 +118,15 @@
 
     &__heading {
         margin-bottom: 64px;
+        text-align: center;
     }
 
     &__list {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 32px;
     }
 
     &__card {
@@ -113,6 +176,7 @@
         max-width: 270px;
         line-height: 150%;
     }
+    
 }
 
 .live-auctions {
@@ -191,6 +255,36 @@
 
     &__card-place-bid-button {
         width: 100%;
+    }
+
+    &__footer {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        &__header {
+            justify-content: center;
+        }
+
+        &__header-explore-link {
+            display: none;
+        }
+
+        &__heading {
+            text-align: center;
+        }
+
+        &__footer {
+            display: grid;
+            justify-content: center;
+            margin-top: 32px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        &__footer {
+            justify-content: stretch;
+        }
     }
 }
 
@@ -290,17 +384,26 @@
         transform-origin: left top;
     }
 
+    &__footer {
+        display: none;
+    }
+
     @media (max-width: 1024px) {
         &__header {
-            flex-direction: column;
             justify-content: center;
+        }
+
+        &__header-explore-all-link {
+            display: none;
         }
 
         &__heading {
             text-align: center;
         }
 
-        &__explore-all-link {
+        &__footer {
+            display: grid;
+            justify-content: center;
             margin-top: 32px;
         }
     }
@@ -314,6 +417,16 @@
     @media (max-width: 425px) {
         &__list {
             grid-template-columns: 1fr;
+        }
+
+        &__footer {
+            justify-content: stretch;
+        }
+    }
+
+    @media (max-width: 375px) {
+        &__card {
+            // padding: 16px;
         }
     }
 }
@@ -471,6 +584,12 @@
         &__card-history-link {
             margin-right: 0px;
             margin-bottom: 16px
+        }
+    }
+
+    @media (max-width: 375px) {
+        &__card {
+            // padding: 16px;
         }
     }
 }
