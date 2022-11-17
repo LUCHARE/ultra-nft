@@ -1,4 +1,3 @@
-
 import gulp from 'gulp'
 import dartSass from 'sass'
 import gulpSass from 'gulp-sass'
@@ -25,7 +24,7 @@ const path = {
         markup: ['src/*.html', 'src/*.hbs'],
         partials: 'src/partials/**/*.hbs',
         styles: ['src/styles/*.css','src/styles/*.scss'],
-        scripts: ['src/scripts/*.js', 'src/scripts/*.cjs', 'src/scripts/*.mjs'],
+        scripts: ['src/scripts/**/*.js', 'src/scripts/**/*.cjs', 'src/scripts/**/*.mjs'],
         images: 'src/images/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },

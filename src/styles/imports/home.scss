@@ -198,6 +198,7 @@
         left: 50%;
         transform: translateX(-50%);
 
+        
         width: 1240px;
         padding-bottom: 64px
     }
@@ -215,6 +216,8 @@
             height: 20px;
 
             position: relative;
+
+            cursor: pointer;
 
             &::after {
                 content: '';
@@ -325,9 +328,33 @@
         }
     }
 
+    @media (max-width: 767px) {
+        &__slider {
+            width: 1100px
+        }
+
+        &__card {
+            grid-template-areas: 'preview'
+                                 'info'
+                                 'stats'
+                                 'button1'
+                                 'button2';
+            grid-template-columns: 1fr;
+        }
+
+        &__card-timer-link {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
     @media (max-width: 425px) {
         &__footer {
             justify-content: stretch;
+        }
+
+        &__slider {
+            width: 100%;
         }
     }
 }

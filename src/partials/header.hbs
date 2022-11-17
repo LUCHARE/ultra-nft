@@ -1,34 +1,61 @@
-        <header class="header">
-            <div class="header__container container">
-                <div class="header__inner">
-                    <a href="/" class="header__home-link header__logo logo">
-                        <img src="images/logo.svg" alt="logo.svg" class="logo__img" />
-                        <h1 class="logo__text">Ultra NFT</h1>
-                    </a>
-                    <form class="header__search-form search-form" action="/" method="get">
-                        <input type="text" name="q" placeholder="Search" class="search-form__input" />
-                        <button type="submit" class="search-form__submit"></button>
-                    </form>
+<header class="header js-header">
+    <div class="header__container container">
+        <div class="header__inner">
+            <a href="/" class="header__home-link header__logo logo">
+                <img src="images/logo.svg" alt="logo.svg" class="logo__img" />
+                <h1 class="logo__text">Ultra NFT</h1>
+            </a>
+            <form class="header__search-form search-form" action="/" method="get">
+                <input type="text" name="q" placeholder="Search" class="search-form__input" />
+                <button type="submit" class="search-form__submit"></button>
+            </form>
 
-                    <nav class="header__nav">
-                        <ul class="header__nav-list">
-                            <li class="header__nav-list-item">
-                                <a href="#" class="header__nav-link">Home</a>
-                            </li>
-                            <li class="header__nav-list-item">
-                                <a href="#" class="header__nav-link">Pages</a>
-                            </li>
-                            <li class="header__nav-list-item">
-                                <a href="#" class="header__nav-link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <a href="#" class="header__connect-wallet-link button button_size_m button_style_rays">
-                        <img src="images/icons/wallet.svg" alt="wallet.svg" class="button__left-icon" />
-                        <span class="button__text">Connect Wallet</span>
-                    </a>
-                    <img src="images/icons/search.svg" alt="search.svg" class="header__search-button">
-                    <img src="images/icons/burger.svg" alt="burger.svg" class="header__burger-button">
-                </div>
-            </div>
-        </header>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-list-item">
+                        <a href="#" class="header__nav-link">Home</a>
+                    </li>
+                    <li class="header__nav-list-item">
+                        <a href="#" class="header__nav-link">Pages</a>
+                    </li>
+                    <li class="header__nav-list-item">
+                        <a href="#" class="header__nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__connect-wallet-link button button_size_m button_style_rays">
+                <img src="images/icons/wallet.svg" alt="wallet.svg" class="button__left-icon" />
+                <span class="button__text">Connect Wallet</span>
+            </a>
+            <img src="images/icons/search.svg" alt="search.svg" class="header__search-button js-header-search-button">
+            <img src="images/icons/burger.svg" alt="burger.svg" class="header__burger-button js-header-menu-button">
+        </div>
+    </div>
+</header>
+
+<div class="header-menu js-header-menu">
+    <nav class="header-menu__nav">
+        <ul class="header-menu__nav-list">
+            <li class="header-menu__nav-list-item">
+                <a href="#" class="header-menu__nav-link">Home</a>
+            </li>
+            <li class="header-menu__nav-list-item">
+                <a href="#" class="header-menu__nav-link">Pages</a>
+            </li>
+            <li class="header-menu__nav-list-item">
+                <a href="#" class="header-menu__nav-link">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    <a href="#" class="header-menu__connect-wallet-link button button_size_m button_style_rays">
+        <img src="images/icons/wallet.svg" alt="wallet.svg" class="button__left-icon" />
+        <span class="button__text">Connect Wallet</span>
+    </a>
+</div>
+
+<div class="header-search js-header-search">
+    <form class="header-search__form" action="/" method="get">
+        <input type="text" name="q" placeholder="Search" class="header-search__form-input" />
+        <button type="submit" class="header-search__form-submit"><img src="images/icons/magnifying-glass.svg" alt=""></button>
+    </form>
+</div>

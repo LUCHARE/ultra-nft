@@ -1,4 +1,12 @@
 .header {
+    position: fixed;
+    left:0;
+    top: 0;
+
+    width: 100%;
+    
+    background-color: rgba(#030812, 0.94);
+
     &__inner {
         display: grid;
         align-items: center;
@@ -64,6 +72,7 @@
         &__inner {
             grid-template-areas: 'logo spacing search burger';
             grid-template-columns: auto 1fr auto auto;
+            padding: 16px 0;
         }
 
         &__search-button {
@@ -84,3 +93,86 @@
     }
 } 
 
+.header-menu {
+    display: none;
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    
+    position: fixed;
+    left: 0;
+    
+    background-color: rgba(#030812, 0.94);
+
+    &__nav {
+        margin-bottom: 32px;
+    }
+
+    &__nav-list {
+        display: grid;
+        justify-items: center
+    }
+
+    &__nav-link {
+        @include Urbanist(24px, 700, #fff);
+    }
+
+    &__nav-list-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &__connect-wallet-link {
+        
+    }
+}
+
+.header-menu_active {
+    display: grid;
+}
+
+.header-search {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+
+    position: fixed;
+    left: 0;
+    
+    background-color: rgba(#030812, 0.94);
+
+    &__form {
+        display: flex;
+        width: 100%;
+    }
+
+    &__form-input {
+        display: block;
+        width: 100%;
+
+        padding: 12px;
+        margin-right: 8px;
+        border-radius: 8px;
+
+        background-color: #3C485D;
+
+        @include Urbanist(14px, 400, #8393AF);
+    }
+
+    &__form-submit {
+        display: block;
+        width: 41px;
+        height: 41px;
+        padding: 6px;
+
+        background: linear-gradient(207.67deg, #FDAE8F 3.43%, #FD1C68 104.7%);
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+}
+
+.header-search_active {
+    display: flex;
+}
