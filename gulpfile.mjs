@@ -7,6 +7,8 @@ import sourcemaps from 'gulp-sourcemaps'
 import gulpif from 'gulp-if'
 import rename from 'gulp-rename'
 import browserSync from 'browser-sync'
+import postcss from 'gulp-postcss'
+import autoprefixer from 'autoprefixer'
 import { deleteAsync as del } from 'del'
 import dotenv from 'dotenv'
 
@@ -50,6 +52,7 @@ function buildStyles() {
     return src(path.src.styles)
         .pipe(gulpif(development, sourcemaps.init()))
         .pipe(sass.sync({}).on('error', sass.logError))
+        .pipe(postcss([autoprefixer()]))
         .pipe(gulpif(development, sourcemaps.write('./')))
         .pipe(dest(path.dist.styles))
         .pipe(reload({ stream: true }))
@@ -57,7 +60,7 @@ function buildStyles() {
 
 function buildMarkup() {
     return src(path.src.markup)
-        .pipe(gulpHb().partials(path.src.partials))
+        .pipe(gulpHb().partials(path.src.partials).helpers('hbs-helpers.cjs'))
         .pipe(rename(path => path.extname = '.html'))
         .pipe(dest(path.dist.markup))
         .pipe(reload({ stream: true }))

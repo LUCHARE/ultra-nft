@@ -122,54 +122,62 @@
                                 <span class="button__text">Explore All</span>
                             </a>
                         </header>
-                    </div>
-                    <div class="live-auctions__wide-container wide-container">
-                        <ul class="live-auctions__list">
-                            <li class="live-auctions__list-item">
-                                <div class="live-auctions__card">
-                                    <img src="images/auction-1.svg" alt="auction.svg"
-                                        class="live-auctions__card-preview" />
-                                    <div class="live-auctions__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="collection-author.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Created by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-                                    <div class="live-auctions__card-stats collection-stats">
-                                        <div class="live-auctions__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="live-auctions__card-bid-button bid-button">
-                                            <img src="images/icons/crown.svg" alt="crown.svg" class="bid-button__icon">
-                                            <span class="bid-button__count">1<span
-                                                    class="bid-button__max-count">/100</span></span>
-                                        </div>
-                                        <div class="live-auctions__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="live-auctions__card-timer-link button button_size_m button_style_material">
-                                        <img src="images/icons/timer.svg" alt="timer.svg" class="button__left-icon" />
-                                        <span class="button__text"> 12d 13h 56m </span>
-                                    </a>
-                                    <a href="#"
-                                        class="live-auctions__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
+
+                            <div class="live-auctions__slider swiper">
+                                <ul class="live-auctions__list swiper-wrapper">
+                                    {{#*inline 'live-auctions-card'}}
+                                        <li class="live-auctions__list-item swiper-slide">
+                                            <div class="live-auctions__card">
+                                                <img src="images/auction-1.svg" alt="auction.svg"
+                                                    class="live-auctions__card-preview" />
+                                                <div class="live-auctions__card-info collection-info">
+                                                    <img src="images/collection-author-1.png" alt="collection-author.png"
+                                                        class="collection-info__avatar" />
+                                                    <h5 class="collection-info__name">Metaverse</h5>
+                                                    <p class="collection-info__author">
+                                                        Created by
+                                                        <span class="collection-info__author-name">John Doe</span>
+                                                    </p>
+                                                </div>
+                                                <div class="live-auctions__card-stats collection-stats">
+                                                    <div class="live-auctions__card-like-button like-button">
+                                                        <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
+                                                        <span class="like-button__count">342</span>
+                                                    </div>
+                                                    <div class="live-auctions__card-bid-button bid-button">
+                                                        <img src="images/icons/crown.svg" alt="crown.svg" class="bid-button__icon">
+                                                        <span class="bid-button__count">1<span
+                                                                class="bid-button__max-count">/100</span></span>
+                                                    </div>
+                                                    <div class="live-auctions__card-price-button price-button">
+                                                        <img src="images/icons/ethereum.svg" alt="ethereum.svg"
+                                                            class="price-button__icon">
+                                                        <span class="price-button__count">5.00<span
+                                                                class="price-button__currency">ETH</span></span>
+                                                    </div>
+                                                </div>
+                                                <a href="#"
+                                                    class="live-auctions__card-timer-link button button_size_m button_style_material">
+                                                    <img src="images/icons/timer.svg" alt="timer.svg" class="button__left-icon" />
+                                                    <span class="button__text"> 12d 13h 56m </span>
+                                                </a>
+                                                <a href="#"
+                                                    class="live-auctions__card-place-bid-link button button_size_m button_style_rays">
+                                                    <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
+                                                    <span class="button__text">Place Bid</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    {{/inline}}
+                                    {{#times 6}}
+                                        {{> live-auctions-card }}
+                                    {{/times}}
+                                </ul>
+                                <div class="live-auctions__slider-pagination swiper-pagination"></div>
+
+                            </div>
                         <footer class="live-auctions__footer">
-                            <a href="#" class="live-auctions__header explore-link button button_size_l button_style_rays">
+                            <a href="#" class="live-auctions__footer-explore-link button button_size_l button_style_rays">
                                 <img src="images/icons/rocket-launch.svg" alt="rocket-launch.svg"
                                     class="button__left-icon" />
                                 <span class="button__text">Explore All</span>
@@ -193,87 +201,38 @@
                             </a>
                         </header>
                         <ul class="popular-collections__list">
-                            <li class="popular-collections__list-item">
-                                <div class="popular-collections__card">
-                                    <div class="popular-collections__card-previews">
-                                        <img src="images/collections-11.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-12.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-13.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-14.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
+                            {{#*inline 'popular-collections-card'}}
+                                <li class="popular-collections__list-item">
+                                    <div class="popular-collections__card">
+                                        <div class="popular-collections__card-previews">
+                                            <img src="images/collections-11.svg" alt="collection.svg"
+                                                class="popular-collections__card-preview" />
+                                            <img src="images/collections-12.svg" alt="collection.svg"
+                                                class="popular-collections__card-preview" />
+                                            <img src="images/collections-13.svg" alt="collection.svg"
+                                                class="popular-collections__card-preview" />
+                                            <img src="images/collections-14.svg" alt="collection.svg"
+                                                class="popular-collections__card-preview" />
+                                        </div>
+                                        <div class="popular-collections__card-info collection-info">
+                                            <img src="images/collection-author-1.png" alt="collection-author.png"
+                                                class="collection-info__avatar" />
+                                            <h5 class="collection-info__name">Metaverse</h5>
+                                            <p class="collection-info__author">
+                                                Created by
+                                                <span class="collection-info__author-name">John Doe</span>
+                                            </p>
+                                        </div>
+                                        <div class="like-button popular-collections__card-like-button">
+                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
+                                            <span class="like-button__count">342</span>
+                                        </div>
                                     </div>
-                                    <div class="popular-collections__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="collection-author.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Created by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-                                    <div class="like-button popular-collections__card-like-button">
-                                        <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                        <span class="like-button__count">342</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="popular-collections__list-item">
-                                <div class="popular-collections__card">
-                                    <div class="popular-collections__card-previews">
-                                        <img src="images/collections-11.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-12.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-13.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-14.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                    </div>
-                                    <div class="popular-collections__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="collection-author.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Created by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-                                    <div class="like-button popular-collections__card-like-button">
-                                        <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                        <span class="like-button__count">342</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="popular-collections__list-item">
-                                <div class="popular-collections__card">
-                                    <div class="popular-collections__card-previews">
-                                        <img src="images/collections-11.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-12.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-13.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                        <img src="images/collections-14.svg" alt="collection.svg"
-                                            class="popular-collections__card-preview" />
-                                    </div>
-                                    <div class="popular-collections__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="collection-author.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Created by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-                                    <div class="like-button popular-collections__card-like-button">
-                                        <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                        <span class="like-button__count">342</span>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            {{/inline}}
+                            {{#times 3}}
+                                {{> popular-collections-card }}
+                            {{/times}}
                         </ul>
                         <footer class="popular-collections__footer">
                             <a href="#"
@@ -293,78 +252,20 @@
                             Top Sellers
                         </h2>
                         <ul class="top-sellers__list">
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
+                            {{#*inline 'top-sellers-card'}}
+                                <li class="top-sellers__list-item">
+                                    <div class="top-sellers__card">
+                                        <img src="images/top-seller.png" alt="top-seller.png"
+                                            class="top-sellers__card-avatar" />
 
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
-                            <li class="top-sellers__list-item">
-                                <div class="top-sellers__card">
-                                    <img src="images/top-seller.png" alt="top-seller.png"
-                                        class="top-sellers__card-avatar" />
-
-                                    <p class="top-sellers__card-name">John Doe</p>
-                                    <p class="top-sellers__card-spent">ETH 242.21</p>
-                                </div>
-                            </li>
+                                        <p class="top-sellers__card-name">John Doe</p>
+                                        <p class="top-sellers__card-spent">ETH 242.21</p>
+                                    </div>
+                                </li>
+                            {{/inline}}
+                            {{#times 8}}
+                                {{> top-sellers-card }}
+                            {{/times}}
                         </ul>
                     </div>
                 </div>
@@ -376,240 +277,51 @@
                             Today’s Picks
                         </h2>
                         <ul class="todays-picks__list">
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
+                            {{#*inline 'todays-picks-card' }}
+                                <li class="todays-picks__item">
+                                    <div class="todays-picks__card">
+                                        <img src="images/todays-pick.svg" alt="todays-pick.svg"
+                                            class="todays-picks__card-preview" />
+                                        <div class="todays-picks__card-info collection-info">
+                                            <img src="images/collection-author-1.png" alt="author-avatar.png"
+                                                class="collection-info__avatar" />
+                                            <h5 class="collection-info__name">Metaverse</h5>
+                                            <p class="collection-info__author">
+                                                Owned by
+                                                <span class="collection-info__author-name">John Doe</span>
+                                            </p>
+                                        </div>
 
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
+                                        <div class="todays-picks__card-stats collection-stats">
+                                            <div class="todays-picks__card-like-button like-button">
+                                                <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
+                                                <span class="like-button__count">342</span>
+                                            </div>
+                                            <div class="todays-picks__card-price-button price-button">
+                                                <img src="images/icons/ethereum.svg" alt="ethereum.svg"
+                                                    class="price-button__icon">
+                                                <span class="price-button__count">5.00<span
+                                                        class="price-button__currency">ETH</span></span>
+                                            </div>
                                         </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
+                                        <a href="#"
+                                            class="todays-picks__card-history-link button button_size_m button_style_material">
+                                            <img src="images/icons/history.svg" alt="history.svg"
+                                                class="button__left-icon" />
+                                            <span class="button__text">View History</span>
+                                        </a>
+                                        <a href="#"
+                                            class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
+                                            <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
+                                            <span class="button__text">Place Bid</span>
+                                        </a>
                                     </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="todays-picks__item">
-                                <div class="todays-picks__card">
-                                    <img src="images/todays-pick.svg" alt="todays-pick.svg"
-                                        class="todays-picks__card-preview" />
-                                    <div class="todays-picks__card-info collection-info">
-                                        <img src="images/collection-author-1.png" alt="author-avatar.png"
-                                            class="collection-info__avatar" />
-                                        <h5 class="collection-info__name">Metaverse</h5>
-                                        <p class="collection-info__author">
-                                            Owned by
-                                            <span class="collection-info__author-name">John Doe</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="todays-picks__card-stats collection-stats">
-                                        <div class="todays-picks__card-like-button like-button">
-                                            <img src="images/icons/heart.svg" alt="heart.svg" class="like-button__icon">
-                                            <span class="like-button__count">342</span>
-                                        </div>
-                                        <div class="todays-picks__card-price-button price-button">
-                                            <img src="images/icons/ethereum.svg" alt="ethereum.svg"
-                                                class="price-button__icon">
-                                            <span class="price-button__count">5.00<span
-                                                    class="price-button__currency">ETH</span></span>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="todays-picks__card-history-link button button_size_m button_style_material">
-                                        <img src="images/icons/history.svg" alt="history.svg"
-                                            class="button__left-icon" />
-                                        <span class="button__text">View History</span>
-                                    </a>
-                                    <a href="#"
-                                        class="todays-picks__card-place-bid-link button button_size_m button_style_rays">
-                                        <img src="images/icons/crown.svg" alt="crown.svg" class="button__left-icon" />
-                                        <span class="button__text">Place Bid</span>
-                                    </a>
-                                </div>
-                            </li>
+                                </li>
+                            {{/inline}}
+                            
+                            {{#times 6}}
+                                {{> todays-picks-card }}
+                            {{/times}}
                         </ul>
                         <a href="#" class="todays-picks__load-more-link">
                             <div class="button button_size_l button_style_rays">

@@ -1,5 +1,5 @@
 .hero {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
 
     &__inner {
         display: flex;
@@ -108,7 +108,7 @@
 }
 
 .how-it-works {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
 
     &__inner {
         display: flex;
@@ -180,16 +180,11 @@
 }
 
 .live-auctions {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
 
     &__inner {
-        display: grid;
     }
 
-    &__wide-container {
-        display: grid;
-        justify-content: center;
-    }
 
     &__header {
         display: flex;
@@ -198,9 +193,59 @@
         margin-bottom: 64px;
     }
 
-    &__list {
+    &__slider {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 1240px;
+        padding-bottom: 64px
+    }
+
+    &__slider-pagination {
         display: flex;
-        gap: 16px;
+        justify-content: center;
+        align-items: center;
+
+        .swiper-pagination-bullet {
+            all: initial;
+
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+
+            position: relative;
+
+            &::after {
+                content: '';
+
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                
+                border-radius: 50%;
+                z-index: 5;
+    
+                border: 2px solid #fff;
+                background-color: transparent;
+    
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            &::after {
+                width: 18px;
+                height: 18px;
+    
+                background-color: #fff;
+            }
+        }
     }
 
     &__card {
@@ -214,10 +259,9 @@
         padding: 24px;
         
         background: rgba(255, 255, 255, 0.2);
-        border-radius: 24px;
-        width: 27vw;
-        max-width: 470px;
-        min-width: 370px;
+        border-radius: 24px;    
+        
+        user-select: none;
     }
 
     &__card-preview {
@@ -289,7 +333,7 @@
 }
 
 .popular-collections {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
 
     &__inner {
         
@@ -432,7 +476,7 @@
 }
 
 .top-sellers {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
 
     &__inner {
         
@@ -501,7 +545,7 @@
 }
 
 .todays-picks {
-    margin-bottom: 160px;
+    margin-bottom: var(--block-vspacing);
     
     &__inner {
         display: grid;
@@ -568,7 +612,7 @@
         justify-self: center;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 425px) {
         &__list {
             grid-template-columns: 1fr;
         }
