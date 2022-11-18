@@ -1,80 +1,110 @@
+import { ScrollLocker } from "./utils.mjs";
+
 class Header {
     constructor() {
-        const el = document.querySelector('.js-header')
-        const menuEl = document.querySelector('.js-header-menu')
-        const searchEl = document.querySelector('.js-header-search')
-        const menuBtn = document.querySelector('.js-header-menu-button')
-        const searchBtn = document.querySelector('.js-header-search-button')
+        const el = document.querySelector(".js-header");
+        const menuEl = document.querySelector(".js-header-menu");
+        const searchEl = document.querySelector(".js-header-search");
+        const menuBtn = document.querySelector(".js-header-menu-button");
+        const searchBtn = document.querySelector(".js-header-search-button");
 
-        this.el = el
-        this.menuEl = menuEl
-        this.searchEl = searchEl
-        this.menuBtn = menuBtn
-        this.searchBtn = searchBtn
-        this.menuActive = false
-        this.searchActive = false
+        this.el = el;
+        this.menuEl = menuEl;
+        this.searchEl = searchEl;
+        this.menuBtn = menuBtn;
+        this.searchBtn = searchBtn;
+        this.menuActive = false;
+        this.searchActive = false;
+        this.scrollLocker = new ScrollLocker((ev) => this.menuActive);
 
-        menuBtn.addEventListener('click', ev => {
-            this.toggleMenu()
-        })
+        menuBtn.addEventListener("click", (ev) => this.toggleMenu());
+        searchBtn.addEventListener("click", (ev) => this.toggleSearch());
 
-        searchBtn.addEventListener('click', ev => {
-            this.toggleSearch()
-        })
+        window.addEventListener("load", () => this.updateContentMargin());
+        window.addEventListener("resize", () => this.updateContentMargin());
 
-        window.addEventListener('load', () => this.updateContentMargin())
-        window.addEventListener('resize', () => this.updateContentMargin())
+        const searchAnim = gsap.timeline({
+            paused: true,
+            onStart: () => {
+                this.searchEl.classList.add("header-search_active");
+                this.searchActive = true;
+            },
+            onReverseComplete: () => {
+                this.searchEl.classList.remove("header-search_active");
+                this.searchActive = false;
+            },
+        });
+        searchAnim.fromTo(
+            searchEl,
+            { y: -100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5 }
+        );
+
+        const menuAnim = gsap.timeline({
+            paused: true,
+            onStart: () => {
+                this.menuEl.classList.add("header-menu_active");
+                this.menuActive = true;
+            },
+            onReverseComplete: () => {
+                this.menuEl.classList.remove("header-menu_active");
+                this.menuActive = false;
+            },
+        });
+        menuAnim.fromTo(
+            menuEl,
+            { yPercent: 100, opacity: 0 },
+            { yPercent: 0, opacity: 1, duration: 0.5 }
+        );
+
+        this.searchAnim = searchAnim;
+        this.menuAnim = menuAnim;
     }
 
     getHeight() {
-        return this.el.clientHeight
+        return this.el.clientHeight;
     }
 
     updateContentMargin() {
-        const contentEl = document.querySelector('.js-content')
-        const contentMargin = this.getHeight()
+        const contentEl = document.querySelector(".js-content");
+        const contentMargin = this.getHeight();
 
-        contentEl.style = `margin-top: ${contentMargin}px`        
+        contentEl.style = `margin-top: ${contentMargin}px`;
     }
 
     openMenu() {
-        const menuEl = this.menuEl
-        const headerHeight = this.getHeight()
+        const menuEl = this.menuEl;
+        const headerHeight = this.getHeight();
 
-        menuEl.style.top = `${headerHeight}px`
-        menuEl.style.height = `calc(100% - ${headerHeight}px)`
-        menuEl.classList.add('header-menu_active')
-        
-        this.menuActive = true
+        menuEl.style.top = `${headerHeight}px`;
+        menuEl.style.height = `calc(100% - ${headerHeight}px)`;
+
+        this.menuAnim.play();
     }
 
     closeMenu() {
-        this.menuEl.classList.remove('header-menu_active')
-        this.menuActive = false
+        this.menuAnim.reverse();
     }
 
     toggleMenu(force = !this.menuActive) {
-        force ? this.openMenu() : this.closeMenu()
+        force ? this.openMenu() : this.closeMenu();
     }
 
     openSearch() {
         const searchEl = this.searchEl;
 
-        searchEl.style.top = `${this.getHeight()}px`
-        searchEl.classList.add('header-search_active')
+        searchEl.style.top = `${this.getHeight()}px`;
 
-        this.searchActive = true
+        this.searchAnim.play();
     }
 
     closeSearch() {
-        this.searchEl.classList.remove('header-search_active')
-        
-        this.searchActive = false
+        this.searchAnim.reverse();
     }
 
     toggleSearch(force = !this.searchActive) {
-        force ? this.openSearch() : this.closeSearch()
+        force ? this.openSearch() : this.closeSearch();
     }
 }
 
-export default new Header()
+export default new Header();

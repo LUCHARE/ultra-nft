@@ -361,6 +361,7 @@ input, button {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 10;
   width: 100%;
   background-color: rgba(3, 8, 18, 0.94);
 }
@@ -444,6 +445,7 @@ input, button {
   width: 100%;
   position: fixed;
   left: 0;
+  z-index: 11;
   background-color: rgba(3, 8, 18, 0.94);
 }
 .header-menu__nav {
@@ -478,6 +480,7 @@ input, button {
   padding: 12px;
   position: fixed;
   left: 0;
+  z-index: 11;
   background-color: rgba(3, 8, 18, 0.94);
 }
 .header-search__form {
@@ -1254,4 +1257,3 @@ input, button {
     margin-bottom: 16px;
   }
 }
-/*# sourceMappingURL=main.css.map */
