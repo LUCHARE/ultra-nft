@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap");
 :root {
   --block-vspacing: 160px;
+  --block-zindex: 5;
 }
 @media (max-width: 767px) {
   :root {
@@ -111,6 +112,11 @@ input, button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .button__left-icon {
   width: 24px;
@@ -119,6 +125,11 @@ input, button {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+.button:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .button_size_l {
@@ -363,7 +374,6 @@ input, button {
   top: 0;
   z-index: 10;
   width: 100%;
-  background-color: rgba(3, 8, 18, 0.94);
 }
 .header__inner {
   display: grid;
@@ -396,10 +406,21 @@ input, button {
   margin-right: 32px;
 }
 .header__nav-link {
+  display: inline-block;
   font-family: Urbanist, sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #fff;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.header__nav-link:hover {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 .header__logo {
   margin-right: 40px;
@@ -663,9 +684,37 @@ input, button {
   }
 }
 
-.hero {
+.content__hero {
+  position: relative;
+  z-index: var(--block-zindex);
   margin-bottom: var(--block-vspacing);
 }
+.content__how-it-works {
+  position: relative;
+  z-index: var(--block-vspacing);
+  margin-bottom: var(--block-vspacing);
+}
+.content__live-auctions {
+  position: relative;
+  z-index: var(--block-vspacing);
+  margin-bottom: var(--block-vspacing);
+}
+.content__popular-collections {
+  position: relative;
+  z-index: var(--block-vspacing);
+  margin-bottom: var(--block-vspacing);
+}
+.content__top-sellers {
+  position: relative;
+  z-index: var(--block-vspacing);
+  margin-bottom: var(--block-vspacing);
+}
+.content__todays-picks {
+  position: relative;
+  z-index: var(--block-vspacing);
+  margin-bottom: var(--block-vspacing);
+}
+
 .hero__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -709,6 +758,15 @@ input, button {
 }
 .hero__illustration-img {
   width: 100%;
+}
+.hero__bg {
+  position: absolute;
+  right: -100px;
+  top: -300px;
+  max-width: 890px;
+  min-width: 500px;
+  width: 50vw;
+  z-index: -1;
 }
 @media (max-width: 1024px) {
   .hero__inner {
@@ -771,9 +829,6 @@ input, button {
   }
 }
 
-.how-it-works {
-  margin-bottom: var(--block-vspacing);
-}
 .how-it-works__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -791,6 +846,8 @@ input, button {
   text-align: center;
 }
 .how-it-works__list {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -857,10 +914,16 @@ input, button {
   max-width: 270px;
   line-height: 150%;
 }
-
-.live-auctions {
-  margin-bottom: var(--block-vspacing);
+.how-it-works__bg {
+  position: absolute;
+  z-index: 0;
+  left: -200px;
+  top: 0;
+  max-width: 890px;
+  min-width: 500px;
+  width: 50vw;
 }
+
 .live-auctions__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1010,10 +1073,9 @@ input, button {
   }
 }
 
-.popular-collections {
-  margin-bottom: var(--block-vspacing);
-}
 .popular-collections__header {
+  position: relative;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1026,6 +1088,8 @@ input, button {
   margin-bottom: 64px;
 }
 .popular-collections__list {
+  position: relative;
+  z-index: 5;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 16px;
@@ -1103,6 +1167,20 @@ input, button {
 .popular-collections__footer {
   display: none;
 }
+.popular-collections__bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 0;
+  max-width: 1280px;
+  min-width: 500px;
+  width: 100vw;
+  -webkit-filter: blur(400px) brightness(50%);
+          filter: blur(400px) brightness(50%);
+}
 @media (max-width: 1024px) {
   .popular-collections__header {
     -webkit-box-pack: center;
@@ -1138,9 +1216,6 @@ input, button {
             justify-content: stretch;
   }
 }
-.top-sellers {
-  margin-bottom: var(--block-vspacing);
-}
 .top-sellers__heading {
   text-align: center;
   margin-bottom: 64px;
@@ -1164,6 +1239,16 @@ input, button {
           backdrop-filter: blur(20px);
   border-radius: 24px;
   cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.top-sellers__card:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .top-sellers__card-avatar {
   grid-area: avatar;
@@ -1196,9 +1281,6 @@ input, button {
   }
 }
 
-.todays-picks {
-  margin-bottom: var(--block-vspacing);
-}
 .todays-picks__inner {
   display: grid;
 }
@@ -1207,6 +1289,8 @@ input, button {
   margin-bottom: 64px;
 }
 .todays-picks__list {
+  position: relative;
+  z-index: 5;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 16px;
@@ -1243,7 +1327,22 @@ input, button {
   grid-area: button2;
 }
 .todays-picks__load-more-link {
+  position: relative;
+  z-index: 5;
   justify-self: center;
+}
+.todays-picks__bg {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -20%;
+  -webkit-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+          transform: translateY(200px);
+  width: 100vw;
+  max-width: 1400px;
+  -webkit-filter: blur(400px);
+          filter: blur(400px);
 }
 @media (max-width: 425px) {
   .todays-picks__list {
@@ -1257,3 +1356,4 @@ input, button {
     margin-bottom: 16px;
   }
 }
+/*# sourceMappingURL=main.css.map */

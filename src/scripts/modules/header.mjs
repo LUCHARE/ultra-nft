@@ -1,5 +1,7 @@
 import { ScrollLocker } from "./utils.mjs";
 
+gsap.registerPlugin(ScrollTrigger);
+
 class Header {
     constructor() {
         const el = document.querySelector(".js-header");
@@ -57,8 +59,24 @@ class Header {
             { yPercent: 0, opacity: 1, duration: 0.5 }
         );
 
+        const bgAnim = gsap.fromTo(
+            el,
+            { backgroundColor: "rgba(3, 8, 18, 0.0)" },
+            { backgroundColor: "rgba(3, 8, 18, 0.94)", duration: 0.3 }
+        );
+        const bgAnimTrigger = ScrollTrigger.create({
+            trigger: ".header",
+            scrub: 0.1,
+            start: 0,
+            end: this.getHeight(),
+
+            animation: bgAnim,
+        });
+
         this.searchAnim = searchAnim;
         this.menuAnim = menuAnim;
+        this.bgAnim = bgAnim;
+        this.bgAnimTrigger = bgAnimTrigger;
     }
 
     getHeight() {
@@ -80,6 +98,9 @@ class Header {
         menuEl.style.height = `calc(100% - ${headerHeight}px)`;
 
         this.menuAnim.play();
+
+        this.bgAnimTrigger.disable();
+        this.bgAnim.play();
     }
 
     closeMenu() {
@@ -96,6 +117,9 @@ class Header {
         searchEl.style.top = `${this.getHeight()}px`;
 
         this.searchAnim.play();
+
+        this.bgAnimTrigger.disable();
+        this.bgAnim.play();
     }
 
     closeSearch() {

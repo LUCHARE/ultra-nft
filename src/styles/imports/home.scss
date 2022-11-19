@@ -1,6 +1,42 @@
-.hero {
-    margin-bottom: var(--block-vspacing);
+.content {
+    &__hero {
+        position: relative;
+        z-index: var(--block-zindex);
+        margin-bottom: var(--block-vspacing);
+    }
 
+    &__how-it-works {
+        position: relative;
+        z-index: var(--block-vspacing);    
+        margin-bottom: var(--block-vspacing);
+    }
+    
+    &__live-auctions {
+        position: relative;
+        z-index: var(--block-vspacing);
+        margin-bottom: var(--block-vspacing);
+    }
+
+    &__popular-collections {
+        position: relative;
+        z-index: var(--block-vspacing);
+        margin-bottom: var(--block-vspacing);
+    }
+
+    &__top-sellers {
+        position: relative;
+        z-index: var(--block-vspacing);
+        margin-bottom: var(--block-vspacing);
+    }
+
+    &__todays-picks {
+        position: relative;
+        z-index: var(--block-vspacing);
+        margin-bottom: var(--block-vspacing);
+    }
+}
+
+.hero {
     &__inner {
         display: flex;
         align-items: center;
@@ -38,6 +74,16 @@
 
     &__illustration-img {
         width: 100%;
+    }
+
+    &__bg {
+        position: absolute;
+        right: -100px;
+        top: -300px;
+        max-width: 890px;
+        min-width: 500px;
+        width: 50vw;
+        z-index: -1;
     }
 
     @media (max-width: 1024px) {
@@ -108,8 +154,6 @@
 }
 
 .how-it-works {
-    margin-bottom: var(--block-vspacing);
-
     &__inner {
         display: flex;
         flex-direction: column;
@@ -122,6 +166,9 @@
     }
 
     &__list {
+        position: relative;
+        z-index: 2;
+
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -177,11 +224,21 @@
         line-height: 150%;
     }
     
+    &__bg {
+        position: absolute;
+        z-index: 0;
+        left: -200px;
+        top: 0;
+
+        max-width: 890px;
+        min-width: 500px;
+        width: 50vw;
+        
+
+    }
 }
 
 .live-auctions {
-    margin-bottom: var(--block-vspacing);
-
     &__inner {
     }
 
@@ -360,13 +417,14 @@
 }
 
 .popular-collections {
-    margin-bottom: var(--block-vspacing);
-
     &__inner {
         
     }
 
     &__header {
+        position: relative;
+        z-index: 5;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -374,6 +432,9 @@
     }
 
     &__list {
+        position: relative;
+        z-index: 5;
+
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 16px;
@@ -459,6 +520,20 @@
         display: none;
     }
 
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+
+        max-width: 1280px;
+        min-width: 500px;
+        width: 100vw;
+
+        filter: blur(400px) brightness(50%);
+    }
+
     @media (max-width: 1024px) {
         &__header {
             justify-content: center;
@@ -503,8 +578,6 @@
 }
 
 .top-sellers {
-    margin-bottom: var(--block-vspacing);
-
     &__inner {
         
     }
@@ -536,6 +609,12 @@
         border-radius: 24px;
 
         cursor: pointer;
+
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     &__card-avatar {
@@ -572,8 +651,6 @@
 }
 
 .todays-picks {
-    margin-bottom: var(--block-vspacing);
-    
     &__inner {
         display: grid;
     }
@@ -584,11 +661,15 @@
     }
 
     &__list {
+        position: relative;
+        z-index: 5;
+
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 16px;
         width: 100%;
         margin-bottom: 64px;
+
     }
 
     &__card {
@@ -636,7 +717,24 @@
     }
 
     &__load-more-link {
+        position: relative;
+        z-index: 5;
+
         justify-self: center;
+    }
+
+    &__bg {
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        right: -20%;
+
+        transform: translateY(200px);
+
+        width: 100vw;
+        max-width: 1400px;
+
+        filter: blur(400px);
     }
 
     @media (max-width: 425px) {

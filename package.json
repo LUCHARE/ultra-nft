@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "npx gulp dev",
     "build": "npx gulp build",
-    "clean": "npx gulp clean"
+    "clean": "npx gulp clean",
+    "generate-favicon": "npx gulp generateFavicon"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +28,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "handlebars": "^4.7.7",
     "postcss": "^8.4.19",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
   },
   "browserslist": "last 5 versions"
 }
