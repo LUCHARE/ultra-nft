@@ -539,6 +539,10 @@ input, button {
   display: flex;
 }
 
+.footer {
+  position: relative;
+  z-index: 10;
+}
 .footer__inner {
   display: grid;
   grid-template-areas: "about sitemap sitemap" "contacts sitemap sitemap" "contacts socials copyright";
@@ -767,6 +771,10 @@ input, button {
   min-width: 500px;
   width: 50vw;
   z-index: -1;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
 }
 @media (max-width: 1024px) {
   .hero__inner {
@@ -842,6 +850,8 @@ input, button {
           align-items: center;
 }
 .how-it-works__heading {
+  position: relative;
+  z-index: 5;
   margin-bottom: 64px;
   text-align: center;
 }
@@ -922,6 +932,10 @@ input, button {
   max-width: 890px;
   min-width: 500px;
   width: 50vw;
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+  -webkit-transform: translateZ(0px);
+          transform: translateZ(0px);
 }
 
 .live-auctions__header {
@@ -1171,15 +1185,14 @@ input, button {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-50%) translateZ(0px);
+          transform: translateX(-50%) translateZ(0px);
   z-index: 0;
   max-width: 1280px;
   min-width: 500px;
   width: 100vw;
-  -webkit-filter: blur(400px) brightness(50%);
-          filter: blur(400px) brightness(50%);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
 }
 @media (max-width: 1024px) {
   .popular-collections__header {
@@ -1336,13 +1349,12 @@ input, button {
   z-index: 0;
   bottom: 0;
   right: -20%;
-  -webkit-transform: translateY(200px);
-      -ms-transform: translateY(200px);
-          transform: translateY(200px);
+  -webkit-transform: translateY(200px) translateZ(0px);
+          transform: translateY(200px) translateZ(0px);
   width: 100vw;
   max-width: 1400px;
-  -webkit-filter: blur(400px);
-          filter: blur(400px);
+  -webkit-filter: blur(60px);
+          filter: blur(60px);
 }
 @media (max-width: 425px) {
   .todays-picks__list {

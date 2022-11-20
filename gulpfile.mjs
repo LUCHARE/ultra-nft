@@ -105,7 +105,7 @@ function buildScripts() {
                     devtool: 'source-map'
                 },
                 webpack,
-                (err, stats) => console.log(err)
+                (err, stats) => { if (err) console.log(err) }
             )
         )
         .pipe(dest(path.dist.scripts))
@@ -179,7 +179,7 @@ function generateFavicon(done) {
                 },
                 androidChrome: {
                     pictureAspect: "noChange",
-                    themeColor: "#ffffff",
+                    themeColor: "#030812",
                     manifest: {
                         display: "standalone",
                         orientation: "notSet",
