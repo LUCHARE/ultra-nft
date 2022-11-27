@@ -57,8 +57,17 @@ class Header {
             { yPercent: 0, opacity: 1, duration: 0.5 }
         );
 
+        const burgerAnim = gsap.timeline({ paused: true, defaults: {duration: 0.2, ease: "power2.out"} });
+        burgerAnim
+            .to(".header__burger-top", { top: "50%", yPercent: -50 }, 0)
+            .to(".header__burger-bottom", { bottom:  "50%", yPercent: 50 }, 0)
+            .to(".header__burger-bottom", { opacity: 0 })
+            .to(".header__burger-top", { rotationZ: -45 })
+            .to(".header__burger-middle", { rotationZ: 45 });
+
         this.searchAnim = searchAnim;
         this.menuAnim = menuAnim;
+        this.burgerAnim = burgerAnim;
     }
 
     getHeight() {
@@ -80,10 +89,12 @@ class Header {
         menuEl.style.height = `calc(100% - ${headerHeight}px)`;
 
         this.menuAnim.play();
+        this.burgerAnim.play();
     }
 
     closeMenu() {
         this.menuAnim.reverse();
+        this.burgerAnim.reverse();
     }
 
     toggleMenu(force = !this.menuActive) {

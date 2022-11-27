@@ -407,6 +407,56 @@ input, button {
 .header__search-button, .header__burger-button {
   display: none;
 }
+.header__burger-button {
+  position: relative;
+  width: 27px;
+  height: 18px;
+}
+.header__burger-top, .header__burger-bottom {
+  position: absolute;
+  right: 0;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.header__burger-top {
+  top: 0;
+  width: 100%;
+}
+.header__burger-bottom {
+  bottom: 0;
+  width: 100%;
+}
+.header__burger-middle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+.header__burger-middle::before, .header__burger-middle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  height: 4px;
+  background-color: #fff;
+}
+.header__burger-middle::before {
+  left: 0;
+  width: 4px;
+  border-radius: 50%;
+}
+.header__burger-middle::after {
+  right: 0;
+  width: 18px;
+  border-radius: 2px;
+}
 @media (max-width: 1024px) {
   .header__search-form {
     display: none;
