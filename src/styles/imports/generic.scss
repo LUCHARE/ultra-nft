@@ -3,6 +3,7 @@
 
 :root {
     --block-vspacing: 160px;
+    --block-zindex: 5;
 
     @media (max-width: 767px) {
         --block-vspacing: 100px;

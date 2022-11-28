@@ -6,7 +6,7 @@
 
     width: 100%;
     
-    background-color: rgba(#030812, 0.94);
+    // background-color: rgba(#030812, 0.94);
 
     &__inner {
         display: grid;
@@ -42,7 +42,15 @@
     }
 
     &__nav-link {
+        display: inline-block;
+
         @include Urbanist(16px, 700, #fff);
+
+        transition: transform .2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
     }
 
     &__logo {

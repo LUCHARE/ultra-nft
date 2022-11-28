@@ -35,6 +35,12 @@
         object-fit: contain;
         object-position: center;
     }
+
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .button_size_l {

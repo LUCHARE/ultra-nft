@@ -1,4 +1,7 @@
 .footer {
+    position: relative;
+    z-index: 10;
+
     &__inner {
         display: grid;
         grid-template-areas: 'about sitemap sitemap'
